@@ -22,6 +22,8 @@ const connectMongo = require('connect-mongo');
 
 const app = express();
 
+
+
 mongoose.connect(process.env.MONGO_URL)
 .then(() => {
     console.log('Mongoose, Successs');
@@ -31,8 +33,10 @@ mongoose.connect(process.env.MONGO_URL)
 });
 
 
+
+
 const sessionStore = connectMongo.create({
-  mongoUrl: 'mongodb://localhost:27017/myReadDB',
+  mongoUrl: [process.env.MONGO_URL],
   touchAfter: 24 * 60 * 60, 
   crypto: {
       secret: process.env.SESSION_SECRET
