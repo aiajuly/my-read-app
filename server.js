@@ -22,12 +22,12 @@ const connectMongo = require('connect-mongo');
 
 const app = express();
 
-
-mongoose.connect(process.env.MONGO_URL);
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", function () {
-  console.log("Connected successfully");
+mongoose.connect(process.env.MONGO_URL)
+.then(() => {
+    console.log('Mongoose, Successs');
+})
+.catch((err) => {
+    console.log(`Mpngoose, Error: ${err}`);
 });
 
 
