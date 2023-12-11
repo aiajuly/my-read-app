@@ -23,7 +23,7 @@ const connectMongo = require('connect-mongo');
 const app = express();
 
 
-mongoose.connect('mongodb://localhost:27017/myReadDB');
+mongoose.connect(process.env.MONGO_URL);
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", function () {
