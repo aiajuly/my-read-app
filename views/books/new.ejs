@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+    <body>
+
+
+        <div class="layout">
+            <%- include('../partials/nav') %>
+                <%- include('../partials/flash') %>
+
+                    <main class="main-new">
+                        <section class="new-book container">
+
+                            <form action="/books" method="POST">
+                                <h4>Add A New Book</h4>
+                                <div class="first-two">
+                                    <div class="field">
+                                        <label for="book-name">Title:</label>
+                                        <input type="text" name="bookName" id="book-name" required>
+                                    </div>
+                                    <div class="field">
+                                        <label for="author">Author:</label>
+                                        <input type="text" name="author" id="title" required>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <label for="img-url">ImageURL: </label>
+                                    <input type="text" name="imageUrl" id="img-url" required>
+                                </div>
+                                <div class="field">
+                                    <label for="description">Description: </label>
+                                    <input type="text" name="description" id="description" required>
+                                </div>
+                                <button class="btn-green">Submit</button>
+                            </form>
+                        </section>
+                    </main>
+
+
+
+                    <%- include('../partials/footer') %>
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+    <body>
+
+
+        <div class="layout">
+            <%- include('../partials/nav') %>
+                <%- include('../partials/flash') %>
+
+                    <main class="all-books">
+                        <h3>All Books</h3>
+                        <% for(let book of books){ %>
+                            <div class="book-card">
+                                <div class="left">
+                                    <img src="<%= book.imageUrl %>" alt="Book's Image">
+                                </div>
+                                <div class="right">
+                                    <div class="title">
+                                        <%= book.bookName %>
+                                    </div>
+                                    <div class="description">
+                                        <%= book.description.slice(0, 180) %>
+                                    </div>
+                                    <a href="books/<%= book._id %>">Read More</a>
+                                </div>
+                            </div>
+
+                            <% } %>
+
+                    </main>
+
+
+
+                    <%- include('../partials/footer') %>
+        </div>
+
+    </body>
+
+</html>

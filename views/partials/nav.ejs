@@ -1,0 +1,20 @@
+<header>
+    <nav class="navbar container">
+        <div class="left">
+            <div class="logo"><a href="/home">MyRead</a></div>
+        </div>
+        <div class="right">
+            <ul class="links-menu">
+                <li><a href="/books">Books</a></li>
+                <li><a href="/books/new">New Book</a></li>
+                <li><a href="/about">About</a></li>
+                <% if (!currentUser){ %>
+                    <li><a href="/login">Sign In</a></li>
+                    <li><a href="/register" class="btn-primary btn-nav">Sign Up</a></li>
+                    <% } else{ %>
+                        <li><a href="/logout">Log Out</a></li>
+                        <% } %>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+    <body>
+
+
+        <div class="layout">
+            <%- include('../partials/nav') %>
+                <%- include('../partials/flash') %>
+
+                    <main class="main-show">
+                        <div class="book-details container-sm">
+                            <h4>
+                                <%= foundBook.bookName %> - <%= foundBook.author %>
+                            </h4>
+                            <div class="owner">
+                                Written by <%= foundBook.owner.username %>
+                            </div>
+                            <img src="<%= foundBook.imageUrl %>" alt="">
+                            <p class="text">
+                                <%= foundBook.description %>
+                            </p>
+                            <% if( currentUser && foundBook.owner.equals(currentUser._id)) {%>
+                                <div class="buttons">
+                                    <a href="/books/<%= foundBook._id %>/edit" class="btn-grey">Edit</a>
+                                    <form action="/books/<%= foundBook._id %>?_method=DELETE" method="POST">
+                                        <button class="btn-red">Delete</button>
+                                    </form>
+                                </div>
+                                <% } %>
+                        </div>
+                        <hr class="line container-sm">
+
+                        <div class="comments container-sm">
+                            <div class="create-comment">
+                                <h4>Leave a comment</h4>
+                                <form action="/books/<%= foundBook._id %>/comments" method="POST">
+                                    <textarea name="text" required></textarea>
+                                    <button class="btn-green">Submit</button>
+                                </form>
+                            </div>
+                            <div class="show-comments">
+                                <h4>Comments</h4>
+                                <% for(comment of foundBook.comments){ %>
+                                    <div class="comment-card">
+                                        <div class="one">
+                                            by <%= comment.owner.username %>
+                                        </div>
+                                        <div class="two">
+                                            <%= comment.text %>
+                                        </div>
+                                        <div class="three">
+                                            <% if( currentUser && comment.owner.equals(currentUser._id)) {%>
+                                                <div class="comments-buttons">
+                                                    <a href="/books/<%= foundBook._id %>/comments/<%= comment._id %>/edit"
+                                                        class="btn-grey">Edit</a>
+                                                    <form
+                                                        action="/books/<%= foundBook._id %>/comments/<%= comment._id %>?_method=DELETE"
+                                                        method="POST">
+                                                        <button class="btn-red">Delete</button>
+                                                    </form>
+                                                </div>
+                                                <% } %>
+
+                                        </div>
+                                    </div>
+
+                                    <% } %>
+                            </div>
+                        </div>
+                    </main>
+
+                    <%- include('../partials/footer') %>
+        </div>
+
+    </body>
+
+</html>

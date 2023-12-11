@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+    <body>
+
+
+        <div class="layout">
+            <%- include('../partials/nav') %>
+                <%- include('../partials/flash') %>
+
+                    <main class="main-edit-comment container">
+                        <div class="create-comment">
+                            <h4>Leave a comment</h4>
+                            <form action="/books/<%= foundBook._id %>/comments/<%= foundComment._id %>?_method=PUT"
+                                method="POST">
+                                <textarea name="text" required><%= foundComment.text %></textarea>
+                                <button class="btn-green">Submit</button>
+                            </form>
+                        </div>
+                    </main>
+
+
+
+                    <%- include('../partials/footer') %>
+        </div>
+
+    </body>
+
+</html>

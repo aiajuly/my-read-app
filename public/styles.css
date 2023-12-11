@@ -1,0 +1,438 @@
+/* basic markup */
+
+:root{
+    --primary: #FF5037;
+    --secondary: #333;
+    --tertiary: #FAFAF7;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: lato, sans-serif;
+    overflow-wrap: break-word;
+}
+
+body{
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 100%;
+}
+
+h3{
+    font-size: 1.953rem;
+}
+
+h4{
+    font-size: 1.563rem;
+}
+
+input{
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: var(--tertiary);
+}
+
+.field{
+    border-bottom: 1px solid var(--secondary);
+}
+
+button{
+    font-size: 16px;
+}
+
+/* utilities */
+.layout{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container{
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-sm{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+span{
+    display: inline-block;
+}
+
+/* navbar */
+
+.navbar{
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+}
+
+.navbar .left .logo{
+    font-size: 22px;
+    font-style: italic;
+}
+
+.navbar .right .links-menu{
+    display: flex;
+
+}
+
+.navbar .right .links-menu li{
+    margin: 0 14px;
+    transition: all 0.6s;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar .right .links-menu li:nth-child(4){
+    margin-left: 35px;
+}
+
+.navbar .right .links-menu li:hover{
+    border-bottom: 2px solid var(--primary);
+}
+.navbar .right .links-menu li:nth-child(5):hover{
+    border-bottom-color: transparent ;
+}
+
+/* footer */
+
+.footer{
+    background-color: var(--secondary);
+    height: 60px;
+    margin-top: auto;
+}
+
+.footer .trademark{
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 30px;
+}
+
+
+/* buttons */
+
+.btn-primary{
+    background-color: var(--primary);
+    color: #fff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover{
+    background-color: #e84229;
+}
+
+.btn-green{
+    background-color: #198754;;
+    color: #fff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-green:hover{
+    background-color: #157448;
+}
+
+.btn-grey{
+    background-color: #777c7a;;
+    color: #fff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-grey:hover{
+    background-color: #666967;
+    color: #fff;
+}
+
+.btn-red{
+    background-color: #dc3545;
+    color: #fff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-red:hover{
+    background-color: #cb3140;
+}
+
+.btn-white{
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    padding: 0.6rem 1.4rem;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.btn-white:hover{
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+/* index-page */
+
+.all-books{
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all-books .book-card{
+    max-width: 540px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    background-color: var(--tertiary);
+    box-shadow: 0 4px 25px var(--secondary);
+    margin: 34px 0;
+    border-radius: 10px;
+    
+}
+
+.all-books .right{
+    margin: auto 15px;
+}
+
+
+
+.all-books .right .title{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.description{
+    margin-bottom: 12px;
+}
+
+
+.all-books .right a{
+    font-weight: 700;
+    font-size: 17px;
+}
+
+/* new-page */
+
+.main-new{
+    margin: 45px 15px;
+}
+
+.new-book{
+    max-width: 550px;
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+    padding: 60px 22px;
+    background-color: var(--tertiary);
+    box-shadow: 0 4px 25px var(--secondary);
+}
+
+.new-book h4{
+    margin-left: 24px;
+}
+
+.new-book form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+
+.field{
+    display: flex;
+    gap: 3px;
+    margin: 24px;
+}
+
+.first-two{
+    display: flex;
+}
+
+.new-book button{
+    width: 100px;
+    margin-left: 24px;
+}
+
+/* show page */
+
+.main-show{
+    margin: 60px 0;
+}
+
+.main-show .owner{
+    margin: 12px 0 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+.main-show img{
+    max-width: 200px;
+    float: right;
+}
+
+.main-show .text{
+    line-height: 2.3;
+    letter-spacing: 1.1px;
+}
+
+.main-show .buttons{
+    margin: 90px 0 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.main-show .buttons a{
+    padding: 0.5rem 1.6rem;
+}
+
+.main-show .buttons form button{
+    padding: 0.65rem 1.6rem;
+}
+
+/* comments in show page */
+
+.comments{
+    margin: 80px auto;
+}
+
+.create-comment textarea{
+    display: block;
+    border-radius: 10px;
+    width: 500px;
+    height: 130px;
+    padding: 12px 8px;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.create-comment textarea:focus{
+    outline: none;
+}
+
+.show-comments{
+    margin-top: 30px;
+}
+
+.show-comments h4{
+    margin: 30px 0 20px;
+}
+
+.show-comments .comment-card{
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 20% 50% 30%;
+    border-bottom: 1px solid var(--secondary);
+    font-size: 1.1rem;
+    padding: 12px 8px;
+}
+
+.comment-card .one{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.show-comments .comment-card:first-of-type{
+    border-top: 1px solid var(--secondary);
+}
+
+.show-comments .comment-card .comments-buttons{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0;
+    margin-left: 22px;
+}
+
+.show-comments .comment-card .comments-buttons a{
+    font-size: 0.7rem;
+    padding: 0.5rem 0.8rem;
+}
+
+.show-comments .comment-card .comments-buttons button{
+    font-size: 0.7rem;
+    padding: 0.6rem 0.8rem;
+    margin-right: 6px;
+}
+
+.main-edit-comment{
+    margin: 70px auto;
+}
+
+/* home */
+
+
+.hero-bg{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh; 
+    color: #fff;
+}
+
+
+.hero-bg a{
+    color: #fff;
+}
+
+.hero-bg .hero-content{
+    margin: 85px auto;
+}
+
+.hero-bg .hero-content h1{
+    color: #fff;
+    font-size: 2.782rem;
+    line-height: 1.1;
+}
+
+.hero-bg .hero-content p{
+    color: #fff;
+    margin-top: 8px;
+    font-size: 1.1rem;
+}
+
+.hero-bg .hero-content .btn-primary{
+    padding: 0.9rem 1.8rem;
+}
+
+.hero-bg .hero-content .hero-buttons{
+    margin-top: 30px;
+}
+
+.hero-bg .hero-content .btn-white{
+    padding: 0.75rem 1.8rem;
+    margin-right: 13px;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/head') %>
+
+    <body>
+
+        <div class="layout">
+
+            <div class="hero-bg">
+
+                <nav class="navbar container">
+                    <div class="left">
+                        <div class="logo"><a href="/home">MyRead</a></div>
+                    </div>
+                    <div class="right">
+                        <ul class="links-menu">
+                            <li><a href="/books">Books</a></li>
+                            <li><a href="/books/new">New Book</a></li>
+                            <li><a href="/about">About</a></li>
+                            <% if (!currentUser){ %>
+                                <li><a href="/login">Sign In</a></li>
+                                <li><a href="/register" class="btn-primary btn-nav">Sign Up</a></li>
+                                <% } else{ %>
+                                    <li><a href="/logout">Log Out</a></li>
+                                    </li>
+                                    <% } %>
+                        </ul>
+                    </div>
+                </nav>
+
+                <section class="hero-content container">
+                    <h1>Find & share the <br>
+                        best books to read </h1>
+                    <p>Meet your favorite book, find your reading community,<br> and manage your reading life.</p>
+                    <div class="hero-buttons">
+                        <% if (!currentUser){ %>
+                            <a class="btn-white" href="/login">Log In</a>
+                            <a href="/books" class="btn-primary">Browse Our Books</a>
+                            <% } else{ %>
+                                <a href="/books" class="btn-primary">Browse Our Books</a>
+                                <% } %>
+                    </div>
+                </section>
+            </div>
+
+            <%- include('../partials/footer') %>
+        </div>
+
+    </body>
+
+</html>
