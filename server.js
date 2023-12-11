@@ -36,7 +36,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 
 const sessionStore = connectMongo.create({
-  mongoUrl: [process.env.MONGO_URL],
+  mongoUrl: process.env.MONGO_URL,
   touchAfter: 24 * 60 * 60, 
   crypto: {
       secret: process.env.SESSION_SECRET
